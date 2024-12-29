@@ -1,0 +1,184 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .message {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .message h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .message p {
+    font-size: 1.5rem;
+  }
+  
+  .message button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #ff6f61;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .message button:hover {
+    background: #e85c50;
+  }
+  
+  .balloons {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .balloon {
+    width: 60px;
+    height: 80px;
+    background: #fff;
+    border-radius: 50% 50% 40% 40%;
+    animation: float 5s ease-in-out infinite;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .balloon:nth-child(2) {
+    background: #ff9a9e;
+    animation-delay: 1s;
+  }
+  
+  .balloon:nth-child(3) {
+    background: #fad0c4;
+    animation-delay: 2s;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-300px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  /* Efek bounce pada pesan */
+.message h1 {
+    animation: bounceIn 1s ease-out;
+  }
+  
+  .message p {
+    animation: bounceIn 1.5s ease-out;
+  }
+
+  /* Responsif untuk perangkat kecil (mobile) */
+@media (max-width: 768px) {
+    .container {
+      width: 100%;
+      padding: 10px;
+    }
+    .message h1 {
+      font-size: 1.5em;
+    }
+    .message p {
+      font-size: 1em;
+    }
+    .photo-gallery img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  /* Efek bounce pada gambar */
+  .photo-gallery img {
+    animation: bounceIn 2s ease-out;
+  }
+  
+  /* Keyframes untuk efek bounce */
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Efek zoom saat hover pada foto */
+  .photo-gallery img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Efek ketikan untuk teks */
+  .message h1, .message p {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid #fff; /* Membuat cursor ketikan */
+    width: 0;
+    animation: typing 3s steps(30) 1s forwards, blinkCaret 0.75s step-end infinite;
+  }
+  
+  /* Animasi untuk mengetik */
+  @keyframes typing {
+    to {
+      width: 100%;
+    }
+  }
+  
+  /* Efek cursor ketikan berkedip */
+  @keyframes blinkCaret {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  .photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .photo-gallery img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .photo-gallery img:hover {
+    transform: scale(1.1);
+  }
+
